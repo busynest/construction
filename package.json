@@ -1,0 +1,39 @@
+{
+  "name": "pwa-construction",
+  "author": "Modern Projects <jack.solutionbox@gmail.com>(https://www.contractorscentre.com)",
+  "version": "0.0.1",
+  "description": "Display PWA Posts. use Firestore Document Data to render lit-HTML Elements with Redux State.",
+  "homepage": "https://www.inmostfire.com",
+  "main": "pwa-construction.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/busynest/construction"
+  },
+  "keywords": [
+    "lit-html",
+    "redux",
+    "firebase",
+    "construction",
+    "management",
+    "display",
+    "listings",
+    "posts"
+  ],
+  "license": "BSD-3-Clause",
+  "flat": true,
+  "scripts": {
+    "start": "polymer serve",
+    "build": "polymer build --auto-base-path && gulp prpl-server",
+    "build:static": "polymer build",
+    "serve": "prpl-server --root server/build",
+    "serve:static": "polymer serve --port 5000 build/es5-bundled"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.2.0",
+    "@webcomponents/webcomponentsjs": "^2.2.4",
+    "lit-element": "^2.1.0",
+    "pwa-helpers": "^0.9.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  }
+}
