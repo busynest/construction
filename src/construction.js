@@ -1,46 +1,24 @@
 // @ts-check
-import { html, LitElement, css }  from 'lit-element';
-import { repeat }                 from 'lit-html/directives/repeat';
-import { connect }                from 'pwa-helpers/connect-mixin.js';
-import { store }                  from '../../../store.js';
+import { html, LitElement, css }    from 'lit-element';
+import { repeat }                   from 'lit-html/directives/repeat';
+import { connect }                  from 'pwa-helpers/connect-mixin.js';
+import { store }                    from './store.js';
+import { select }                   from './select.js';
+import { firebaseUser, deleteDoc }  from './construction-functions';
+import { left, right }              from './icons.js';
+import { Design }                   from './design.js';
+import { showProjects, industry, nextPost, previousPost } from './construction-action';
 
-// import { listings }            from '../../app-elements/firebaseUser';
-import {
-  firebaseUser,
-  deleteDoc
-}                                 from '../../snacks/paw-auth/src/user-functions';
-import { select }                 from '../../app-elements/select';
-
-import { left, right }            from './icons.js';
-import { Design }                 from './design.js';
-
-import {
-  showProjects,
-  industry,
-  nextPost,
-  previousPost
-}                                 from './construction-action';
-
-import {
-  area
-}                                 from '../../../actions/phonebook';
-
-import { ContractorsNetwork }     from '../network';
-
-// import { deleteDoc }              from '../snacks/user-account';
-// import { plusIcon, lens }         from '../app-elements/icons';
-
-export class ContractorsManagement extends connect(store)(LitElement) {
-  static get is() { return 'customer-management'; }
+export class ContractorsListing extends connect(store)(LitElement) {
+  static get is() { return 'contractors-listing'; }
   static get properties() {
     return {
         // PROJECT MANAGEMENT
-        place:              { type: String },
+        location:           { type: String },
         industry:           { type: String },
         residential:        { type: Array },
         commercial:         { type: Array },
-        posts:              { type: Number },
-        test:               { type: Array }
+        posts:              { type: Number }
     }
   }
 
@@ -92,19 +70,19 @@ export class ContractorsManagement extends connect(store)(LitElement) {
   }
 
   stateChanged(state) {
-    this.area                = state.phonebook.area;
     this.industry            = state.projects.industry;
     this.posts               = state.projects.projectState;
+    // this.area                = state.phonebook.area;
     // this.residential         = state.projects.residential;
     // this.city                = state.user.setUser;
   }
-
+/*
   _deleteDoc() {
     const a = firebaseUser(); // currently selected collection
     const b = this.shadowRoot.getElementById('projects').value; // currently selected document
     deleteDoc(a, b);
   }
-
+*/
   _industry(e) {
    store.dispatch(industry(e.target.value));
   }
@@ -334,7 +312,7 @@ export class ContractorsManagement extends connect(store)(LitElement) {
   }
 }
 
-window.customElements.define('contractors-management', ContractorsManagement);
+window.customElements.define('contractors-listing', ContractorsListing);
 
 /*
   connectedCallback() {
@@ -346,6 +324,10 @@ window.customElements.define('contractors-management', ContractorsManagement);
       })
   }
 */
+
+// import { area }                   from '../../../actions/phonebook';
+// import { ContractorsNetwork }     from '../network';
+// import { deleteDoc }              from '../snacks/user-account';
 
 /*
 

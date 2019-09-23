@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "pwa-auth.js",
+  "shell": "pwa-construction.js",
   "moduleResolution": "node",
   "npm": true,
   "license": "MIT",

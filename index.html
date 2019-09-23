@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <head>
     <meta charset="UTF-8">
     <!-- TITILE -->
-    <title>pwa-auth</title>
+    <title>pwa-construction</title>
     <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
     <!-- BASE -->
@@ -36,18 +36,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     <!-- https://github.com/reactjs/redux/issues/2907 -->
     <script>
+    /*
     if ('serviceWorker' in navigator) { window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js', {
           scope: '/',
         });
       });
     }
+    */
     window.process = { env: { NODE_ENV: 'production' } };
     </script>
     <!-- MANIFEST -->
     <link rel="manifest"       href="manifest.json" />
     <!-- FAVICON -->
-    <link rel="icon"           href="images/favicon.ico">
+    <link rel="icon"           href="images/favicon.ico" />
     <!-- THEME COLOR -->
     <meta name="theme-color"   content="#272931" />
     <!-- AUTHOR -->
@@ -55,19 +57,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- CANONICAL -->
     <link rel="canonical"      href="https://inmostfire.com" />
     <!-- DESCRIPTION -->
-    <meta name="description"   content="To provide a personalized experience, Apps need to know the identity of a user to securely store data in the cloud. pwa-auth is powered by The Firebase Authentication backend, consistently providing a centralized and predictable state behaviour with Redux, and declaratively rendering straight into the DOM with Google Polymer's fast and light Lit-Element. This Component includes 3 HTML Tags, and 1 Boilerplate Function to display the user icon, sign up, login, log out, change account details, and delete the user's account." />
+    <meta name="description"   content="Display PWA Posts. use Firestore Document Data to render lit-HTML Elements with Redux State." />
     <!-- KEYWORDS -->
-    <meta name="keywords"     content="lit-html, redux, firebase, user, management, drawer, settings, icon" />
-  
+    <meta name="keywords"     content="lit-html, redux, firebase, construction, management, display, listings, posts" />
+
   </head>
 
-  <body>
+  <body>n
 
     <!-- LOAD ANY POLYFILLS YOUR BROWSER NEEDS -->
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" async ></script>
 
     <!-- APPLICATION-SHELL -->
-    <application-shell appTitle="pwa-auth"></application-shell>
+    <application-shell appTitle="pwa-construction"></application-shell>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73943527-19"></script>
@@ -85,7 +87,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-storage.js"        ></script> 
   
     <script>
-      document.addEventListener("DOMContentLoaded", (event) => {  });  
+      // document.addEventListener("DOMContentLoaded", (event) => {  });  
         // Initialize Firebase
         const admin = {
           apiKey: "AIzaSyAJfm5MahdHr4HzwRLWN7IBhVYXMjP65lQ",
@@ -105,7 +107,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </script>
 
     <!-- APPLICATION-SHELL -->
-    <script type="module" src="/deploy/application-shell.js" async></script>
+    <script type="module" src="/launch/application-shell.js" async></script>
     
   </body>
 </html>
